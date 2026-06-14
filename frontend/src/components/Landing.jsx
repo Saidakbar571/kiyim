@@ -8,7 +8,7 @@ export default function Landing({ onNavigate }) {
         <div className="header-container">
           <div className="logo">
             <i className="fa-solid fa-globe"></i>
-            <span>Retake<span>Co</span></span>
+            <span>Shop<span>Co</span></span>
           </div>
           <div className="header-actions">
             <button className="btn btn-outline btn-signin" onClick={() => onNavigate('login')}>Portalga Kirish</button>
