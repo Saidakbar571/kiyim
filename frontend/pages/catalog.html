@@ -1,0 +1,72 @@
+<section id="tab-catalog" class="tab-pane active hidden">
+        <div class="catalog-layout-grid">
+          <!-- Left Catalog items grid -->
+          <div class="catalog-items-container">
+            <div class="action-bar">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="catalog-search" placeholder="Katalogdan qidirish...">
+              </div>
+              <div class="filter-group">
+                <select id="catalog-filter-cat">
+                  <option value="">Barcha bo'limlar</option>
+                  <option value="Kostyumlar">Kostyumlar</option>
+                  <option value="Futbolkalar">Futbolkalar</option>
+                  <option value="Shimlar">Shimlar</option>
+                  <option value="Ko'ylaklar">Ko'ylaklar</option>
+                  <option value="Poyabzallar">Poyabzallar</option>
+                  <option value="Kurtkalar">Kurtkalar</option>
+                </select>
+                <select id="catalog-sort">
+                  <option value="default">Saralash: Standart</option>
+                  <option value="price-asc">Narx: Arzonroqlaridan</option>
+                  <option value="price-desc">Narx: Qimmatroqlaridan</option>
+                  <option value="name-asc">Nomi bo'yicha: A-Z</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="product-grid" id="catalog-products-grid">
+              <!-- Dynamically rendered catalog products -->
+            </div>
+          </div>
+
+          <!-- Right Shopping Cart Sidebar -->
+          <aside class="catalog-cart-sidebar">
+            <h3>Xarid Savati</h3>
+            <div class="cart-items-list" id="cart-items-container">
+              <!-- Cart items -->
+            </div>
+
+            <div class="cart-coupon-section mt-3">
+              <label for="cart-coupon-input">Promokod</label>
+              <div style="display:flex; gap:8px; margin-top:5px;">
+                <input type="text" id="cart-coupon-input" placeholder="Masalan: SHOPCO10" style="flex-grow:1; padding:8px;">
+                <button class="btn btn-secondary btn-sm" id="btn-cart-apply-coupon">Apply</button>
+              </div>
+              <span id="cart-coupon-msg" style="font-size:0.75rem; font-weight:600; display:block; margin-top:4px;"></span>
+            </div>
+
+            <div class="cart-summary-box mt-3">
+              <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">0 UZS</span>
+              </div>
+              <div class="summary-row text-success" id="cart-discount-row" style="display:none;">
+                <span>Discount:</span>
+                <span id="cart-discount-val">0 UZS</span>
+              </div>
+              <div class="summary-row total-row mt-2">
+                <span>Jami Summa:</span>
+                <span id="cart-grand-total">0 UZS</span>
+              </div>
+            </div>
+
+            <button class="btn btn-accent btn-block mt-3" id="btn-checkout-cart" style="color:#0b0f19; font-weight:600;">
+              Buyurtma berish <i class="fa-solid fa-cash-register"></i>
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      

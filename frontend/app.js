@@ -22,50 +22,22 @@ const state = {
   cartCoupon: null
 };
 
-// DOM Elements
+// DOM Elements (Static layouts & Modals)
 const elements = {
-  landingPage: document.getElementById('landing-page'),
-  authScreen: document.getElementById('auth-screen'),
   appContainer: document.getElementById('app-container'),
-  
-  // Auth containers
-  loginViewContainer: document.getElementById('login-view-container'),
-  registerViewContainer: document.getElementById('register-view-container'),
-  loginForm: document.getElementById('login-form'),
-  registerForm: document.getElementById('register-form'),
-  loginError: document.getElementById('login-error'),
-  registerError: document.getElementById('register-error'),
-  linkGoToRegister: document.getElementById('link-go-to-register'),
-  linkGoToLogin: document.getElementById('link-go-to-login'),
-  
   btnLogout: document.getElementById('btn-logout'),
   menuItems: document.querySelectorAll('.menu-item'),
-  tabPanes: document.querySelectorAll('.tab-pane'),
   tabTitle: document.getElementById('tab-title'),
   tabSubtitle: document.getElementById('tab-subtitle'),
   userDisplayName: document.getElementById('user-display-name'),
   userDisplayRole: document.getElementById('user-display-role'),
 
-  // Stats (Admin)
-  statSales: document.getElementById('stat-sales'),
-  statOrders: document.getElementById('stat-orders'),
-  statCustomers: document.getElementById('stat-customers'),
-  statStockAlert: document.getElementById('stat-stock-alert'),
-  recentOrdersList: document.getElementById('recent-orders-list'),
-
-  // Products (Admin)
-  productListContainer: document.getElementById('product-list-container'),
-  searchProduct: document.getElementById('search-product'),
-  filterProductCat: document.getElementById('filter-product-cat'),
-  btnOpenProductModal: document.getElementById('btn-open-product-modal'),
+  // Product Modal (Static)
   productModal: document.getElementById('product-modal'),
   productForm: document.getElementById('product-form'),
   productModalTitle: document.getElementById('product-modal-title'),
 
-  // Orders (Admin)
-  ordersListTable: document.getElementById('orders-list-table'),
-  searchOrder: document.getElementById('search-order'),
-  btnOpenOrderModal: document.getElementById('btn-open-order-modal'),
+  // Order Modal (Static)
   orderModal: document.getElementById('order-modal'),
   orderForm: document.getElementById('order-form'),
   orderCustomerSelect: document.getElementById('order-customer'),
@@ -80,46 +52,19 @@ const elements = {
   orderDiscountContainer: document.getElementById('order-discount-container'),
   orderDiscountValue: document.getElementById('order-discount-value'),
 
-  // Customers (Admin)
-  customersListTable: document.getElementById('customers-list-table'),
-  searchCustomer: document.getElementById('search-customer'),
-  btnOpenCustomerModal: document.getElementById('btn-open-customer-modal'),
+  // Customer Modal (Static)
   customerModal: document.getElementById('customer-modal'),
   customerForm: document.getElementById('customer-form'),
 
-  // Reports (Admin)
-  reportAvgCart: document.getElementById('report-avg-cart'),
-  reportMaxSale: document.getElementById('report-max-sale'),
-
-  // Coupons (Admin)
-  couponsListTable: document.getElementById('coupons-list-table'),
-  btnOpenCouponModal: document.getElementById('btn-open-coupon-modal'),
+  // Coupon Modal (Static)
   couponModal: document.getElementById('coupon-modal'),
   couponForm: document.getElementById('coupon-form'),
   couponError: document.getElementById('coupon-error'),
 
-  // Staff (Admin)
-  staffListTable: document.getElementById('staff-list-table'),
-  btnOpenStaffModal: document.getElementById('btn-open-staff-modal'),
+  // Staff Modal (Static)
   staffModal: document.getElementById('staff-modal'),
   staffForm: document.getElementById('staff-form'),
-  staffError: document.getElementById('staff-error'),
-
-  // --- CLIENT KATALOG TAB DOM ---
-  catalogSearch: document.getElementById('catalog-search'),
-  catalogFilterCat: document.getElementById('catalog-filter-cat'),
-  catalogSort: document.getElementById('catalog-sort'),
-  catalogProductsGrid: document.getElementById('catalog-products-grid'),
-  cartItemsContainer: document.getElementById('cart-items-container'),
-  cartCouponInput: document.getElementById('cart-coupon-input'),
-  btnCartApplyCoupon: document.getElementById('btn-cart-apply-coupon'),
-  cartCouponMsg: document.getElementById('cart-coupon-msg'),
-  cartSubtotal: document.getElementById('cart-subtotal'),
-  cartDiscountRow: document.getElementById('cart-discount-row'),
-  cartDiscountVal: document.getElementById('cart-discount-val'),
-  cartGrandTotal: document.getElementById('cart-grand-total'),
-  btnCheckoutCart: document.getElementById('btn-checkout-cart'),
-  myordersListTable: document.getElementById('myorders-list-table')
+  staffError: document.getElementById('staff-error')
 };
 
 // Charts references
@@ -157,47 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Setup Events
 function setupEventListeners() {
-  // Landing Navigation to Login
-  document.querySelectorAll('.btn-signin').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showLoginScreen();
-    });
-  });
-
-  // Landing Navigation to Register
-  document.querySelectorAll('.btn-register').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showRegisterScreen();
-    });
-  });
-
-  // Switch Auth Card views
-  elements.linkGoToRegister.addEventListener('click', (e) => {
-    e.preventDefault();
-    showRegisterScreen();
-  });
-
-  elements.linkGoToLogin.addEventListener('click', (e) => {
-    e.preventDefault();
-    showLoginScreen();
-  });
-
-  // Back to Landing from Auth card
-  document.querySelectorAll('.btn-back-to-home').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showLandingScreen();
-    });
-  });
-
-  // Login Form
-  elements.loginForm.addEventListener('submit', handleLogin);
-
-  // Register Form
-  elements.registerForm.addEventListener('submit', handleRegister);
-
   // Logout
   elements.btnLogout.addEventListener('click', handleLogout);
 
@@ -210,11 +114,6 @@ function setupEventListeners() {
     });
   });
 
-  // Navigate to Orders from Dashboard
-  document.querySelector('.btn-navigate-orders').addEventListener('click', () => {
-    switchTab('orders');
-  });
-
   // Modal Closers
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -223,41 +122,14 @@ function setupEventListeners() {
     });
   });
 
-  // Products CRUD handlers
-  elements.btnOpenProductModal.addEventListener('click', () => openProductModal());
+  // Global Modal CRUD Forms & static handlers (Modals are in index.html, so they exist on load)
   elements.productForm.addEventListener('submit', saveProduct);
-  elements.searchProduct.addEventListener('input', renderProducts);
-  elements.filterProductCat.addEventListener('change', renderProducts);
-
-  // Customers CRUD handlers
-  elements.btnOpenCustomerModal.addEventListener('click', () => openCustomerModal());
   elements.customerForm.addEventListener('submit', saveCustomer);
-  elements.searchCustomer.addEventListener('input', renderCustomers);
-
-  // Orders creation handlers
-  elements.btnOpenOrderModal.addEventListener('click', () => openOrderModal());
   elements.btnAddItemToList.addEventListener('click', addItemToOrderBuilder);
   elements.orderForm.addEventListener('submit', saveOrder);
-  elements.searchOrder.addEventListener('input', renderOrders);
   elements.btnApplyCoupon.addEventListener('click', applyCouponCode);
-
-  // Coupons handlers
-  elements.btnOpenCouponModal.addEventListener('click', () => openCouponModal());
   elements.couponForm.addEventListener('submit', saveCoupon);
-
-  // Staff handlers
-  elements.btnOpenStaffModal.addEventListener('click', () => openStaffModal());
   elements.staffForm.addEventListener('submit', saveStaff);
-
-  // --- CLIENT CATALOG SEARCH / FILTER ---
-  elements.catalogSearch.addEventListener('input', renderCatalogProducts);
-  elements.catalogFilterCat.addEventListener('change', renderCatalogProducts);
-  elements.catalogSort.addEventListener('change', renderCatalogProducts);
-  elements.btnCartApplyCoupon.addEventListener('click', applyCartCouponCode);
-  elements.btnCheckoutCart.addEventListener('click', checkoutShoppingProductCart);
-
-  // Profile Settings Form
-  document.getElementById('profile-settings-form').addEventListener('submit', saveProfileData);
 }
 
 // Authentication Check
@@ -276,31 +148,129 @@ async function checkAuth() {
   }
 }
 
-function showLandingScreen() {
-  elements.landingPage.classList.remove('hidden');
-  elements.authScreen.classList.add('hidden');
-  elements.appContainer.classList.add('hidden');
+// Page Template Cache
+const templateCache = {};
+
+async function getTemplate(pageName) {
+  if (templateCache[pageName]) {
+    return templateCache[pageName];
+  }
+  try {
+    const res = await fetch(`/pages/${pageName}.html`);
+    if (!res.ok) throw new Error(`Template load error: ${res.statusText}`);
+    const html = await res.text();
+    templateCache[pageName] = html;
+    return html;
+  } catch (err) {
+    console.error(`Failed to load page template ${pageName}:`, err);
+    return `<div class="error-msg" style="padding: 20px;">Sahifani yuklashda xatolik yuz berdi (${pageName}).</div>`;
+  }
 }
 
-function showLoginScreen() {
-  elements.landingPage.classList.add('hidden');
-  elements.authScreen.classList.remove('hidden');
+async function showLandingScreen() {
+  const landingContainer = document.getElementById('landing-page-container');
+  const authContainer = document.getElementById('auth-screen-container');
+  
+  landingContainer.innerHTML = await getTemplate('landing');
+  landingContainer.style.display = 'block';
+  authContainer.style.display = 'none';
   elements.appContainer.classList.add('hidden');
-  elements.loginViewContainer.classList.remove('hidden');
-  elements.registerViewContainer.classList.add('hidden');
+
+  // Bind Landing events
+  document.querySelectorAll('.btn-signin').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLoginScreen();
+    });
+  });
+
+  document.querySelectorAll('.btn-register').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showRegisterScreen();
+    });
+  });
 }
 
-function showRegisterScreen() {
-  elements.landingPage.classList.add('hidden');
-  elements.authScreen.classList.remove('hidden');
+async function showLoginScreen() {
+  const landingContainer = document.getElementById('landing-page-container');
+  const authContainer = document.getElementById('auth-screen-container');
+
+  authContainer.innerHTML = await getTemplate('auth');
+  landingContainer.style.display = 'none';
+  authContainer.style.display = 'block';
   elements.appContainer.classList.add('hidden');
-  elements.loginViewContainer.classList.add('hidden');
-  elements.registerViewContainer.classList.remove('hidden');
+
+  const loginView = document.getElementById('login-view-container');
+  const registerView = document.getElementById('register-view-container');
+  loginView.classList.remove('hidden');
+  registerView.classList.add('hidden');
+
+  // Re-bind Auth-specific form events
+  elements.loginForm = document.getElementById('login-form');
+  elements.loginError = document.getElementById('login-error');
+  if (elements.loginForm) {
+    elements.loginForm.addEventListener('submit', handleLogin);
+  }
+
+  const registerLink = document.getElementById('link-go-to-register');
+  if (registerLink) {
+    registerLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showRegisterScreen();
+    });
+  }
+
+  document.querySelectorAll('.btn-back-to-home').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLandingScreen();
+    });
+  });
+}
+
+async function showRegisterScreen() {
+  const landingContainer = document.getElementById('landing-page-container');
+  const authContainer = document.getElementById('auth-screen-container');
+
+  authContainer.innerHTML = await getTemplate('auth');
+  landingContainer.style.display = 'none';
+  authContainer.style.display = 'block';
+  elements.appContainer.classList.add('hidden');
+
+  const loginView = document.getElementById('login-view-container');
+  const registerView = document.getElementById('register-view-container');
+  loginView.classList.add('hidden');
+  registerView.classList.remove('hidden');
+
+  // Re-bind register-specific elements
+  elements.registerForm = document.getElementById('register-form');
+  elements.registerError = document.getElementById('register-error');
+  if (elements.registerForm) {
+    elements.registerForm.addEventListener('submit', handleRegister);
+  }
+
+  const loginLink = document.getElementById('link-go-to-login');
+  if (loginLink) {
+    loginLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLoginScreen();
+    });
+  }
+
+  document.querySelectorAll('.btn-back-to-home').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLandingScreen();
+    });
+  });
 }
 
 function showAppScreen() {
-  elements.landingPage.classList.add('hidden');
-  elements.authScreen.classList.add('hidden');
+  const landingContainer = document.getElementById('landing-page-container');
+  const authContainer = document.getElementById('auth-screen-container');
+  landingContainer.style.display = 'none';
+  authContainer.style.display = 'none';
   elements.appContainer.classList.remove('hidden');
   elements.userDisplayName.textContent = state.user.full_name;
   elements.userDisplayRole.textContent = state.user.role === 'admin' ? 'Administrator' : 'Foydalanuvchi';
@@ -403,7 +373,7 @@ async function handleLogout() {
 }
 
 // Tab switcher
-function switchTab(tabId) {
+async function switchTab(tabId) {
   state.activeTab = tabId;
 
   // Active Menu Link
@@ -415,14 +385,17 @@ function switchTab(tabId) {
     }
   });
 
-  // Active Tab Pane
-  elements.tabPanes.forEach(pane => {
-    if (pane.id === `tab-${tabId}`) {
-      pane.classList.remove('hidden');
-    } else {
-      pane.classList.add('hidden');
-    }
-  });
+  // Dynamically load the page/tab content
+  const tabContentArea = document.getElementById('tab-content-area');
+  const templateHtml = await getTemplate(tabId);
+  tabContentArea.innerHTML = templateHtml;
+
+  // Fix the inner active tab display inside our newly injected fragment
+  const tabPane = tabContentArea.querySelector('.tab-pane');
+  if (tabPane) {
+    tabPane.classList.remove('hidden');
+    tabPane.classList.add('active');
+  }
 
   // Header Titles
   const titles = {
@@ -441,8 +414,92 @@ function switchTab(tabId) {
   elements.tabTitle.textContent = titles[tabId].title;
   elements.tabSubtitle.textContent = titles[tabId].subtitle;
 
+  // Re-bind all selectors inside this specific tab
+  rebindTabElements(tabId);
+
   // Load data corresponding to tab
   loadTabData(tabId);
+}
+
+// Re-bind DOM elements for the active tab dynamically
+function rebindTabElements(tabId) {
+  if (tabId === 'catalog') {
+    elements.catalogSearch = document.getElementById('catalog-search');
+    elements.catalogFilterCat = document.getElementById('catalog-filter-cat');
+    elements.catalogSort = document.getElementById('catalog-sort');
+    elements.catalogProductsGrid = document.getElementById('catalog-products-grid');
+    elements.cartItemsContainer = document.getElementById('cart-items-container');
+    elements.cartCouponInput = document.getElementById('cart-coupon-input');
+    elements.btnCartApplyCoupon = document.getElementById('btn-cart-apply-coupon');
+    elements.cartCouponMsg = document.getElementById('cart-coupon-msg');
+    elements.cartSubtotal = document.getElementById('cart-subtotal');
+    elements.cartDiscountRow = document.getElementById('cart-discount-row');
+    elements.cartDiscountVal = document.getElementById('cart-discount-val');
+    elements.cartGrandTotal = document.getElementById('cart-grand-total');
+    elements.btnCheckoutCart = document.getElementById('btn-checkout-cart');
+
+    elements.catalogSearch.addEventListener('input', renderCatalogProducts);
+    elements.catalogFilterCat.addEventListener('change', renderCatalogProducts);
+    elements.catalogSort.addEventListener('change', renderCatalogProducts);
+    elements.btnCartApplyCoupon.addEventListener('click', applyCartCouponCode);
+    elements.btnCheckoutCart.addEventListener('click', checkoutShoppingProductCart);
+  } else if (tabId === 'myorders') {
+    elements.myordersListTable = document.getElementById('myorders-list-table');
+  } else if (tabId === 'dashboard') {
+    elements.statSales = document.getElementById('stat-sales');
+    elements.statOrders = document.getElementById('stat-orders');
+    elements.statCustomers = document.getElementById('stat-customers');
+    elements.statStockAlert = document.getElementById('stat-stock-alert');
+    elements.recentOrdersList = document.getElementById('recent-orders-list');
+    
+    const navOrdersBtn = document.querySelector('.btn-navigate-orders');
+    if (navOrdersBtn) {
+      navOrdersBtn.addEventListener('click', () => {
+        switchTab('orders');
+      });
+    }
+  } else if (tabId === 'products') {
+    elements.productListContainer = document.getElementById('product-list-container');
+    elements.searchProduct = document.getElementById('search-product');
+    elements.filterProductCat = document.getElementById('filter-product-cat');
+    elements.btnOpenProductModal = document.getElementById('btn-open-product-modal');
+
+    elements.btnOpenProductModal.addEventListener('click', () => openProductModal());
+    elements.searchProduct.addEventListener('input', renderProducts);
+    elements.filterProductCat.addEventListener('change', renderProducts);
+  } else if (tabId === 'orders') {
+    elements.ordersListTable = document.getElementById('orders-list-table');
+    elements.searchOrder = document.getElementById('search-order');
+    elements.btnOpenOrderModal = document.getElementById('btn-open-order-modal');
+
+    elements.btnOpenOrderModal.addEventListener('click', () => openOrderModal());
+    elements.searchOrder.addEventListener('input', renderOrders);
+  } else if (tabId === 'customers') {
+    elements.customersListTable = document.getElementById('customers-list-table');
+    elements.searchCustomer = document.getElementById('search-customer');
+    elements.btnOpenCustomerModal = document.getElementById('btn-open-customer-modal');
+
+    elements.btnOpenCustomerModal.addEventListener('click', () => openCustomerModal());
+    elements.searchCustomer.addEventListener('input', renderCustomers);
+  } else if (tabId === 'reports') {
+    elements.reportAvgCart = document.getElementById('report-avg-cart');
+    elements.reportMaxSale = document.getElementById('report-max-sale');
+  } else if (tabId === 'coupons') {
+    elements.couponsListTable = document.getElementById('coupons-list-table');
+    elements.btnOpenCouponModal = document.getElementById('btn-open-coupon-modal');
+
+    elements.btnOpenCouponModal.addEventListener('click', () => openCouponModal());
+  } else if (tabId === 'staff') {
+    elements.staffListTable = document.getElementById('staff-list-table');
+    elements.btnOpenStaffModal = document.getElementById('btn-open-staff-modal');
+
+    elements.btnOpenStaffModal.addEventListener('click', () => openStaffModal());
+  } else if (tabId === 'profile') {
+    const profForm = document.getElementById('profile-settings-form');
+    if (profForm) {
+      profForm.addEventListener('submit', saveProfileData);
+    }
+  }
 }
 
 // Fetch corresponding Tab Data

@@ -1,0 +1,71 @@
+<div id="auth-screen" class="auth-container hidden">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="logo">
+          <i class="fa-solid fa-globe"></i>
+          <span>Shop<span>Co</span></span>
+        </div>
+        <h3>B2B Portal Access</h3>
+        <p>Manage wholesale catalog, bulk orders, and tracking</p>
+      </div>
+
+      <!-- Login View Container -->
+      <div id="login-view-container">
+        <form id="login-form">
+          <div class="input-group">
+            <label for="username"><i class="fa-solid fa-user"></i> Login</label>
+            <input type="text" id="username" placeholder="Loginni kiriting" required value="admin">
+          </div>
+          <div class="input-group">
+            <label for="password"><i class="fa-solid fa-lock"></i> Parol</label>
+            <input type="password" id="password" placeholder="Parolni kiriting" required value="admin123">
+          </div>
+          <div id="login-error" class="error-msg"></div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Access Portal <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          
+          <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary);">
+            Hisobingiz yo'qmi? <a href="#" id="link-go-to-register" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Ro'yxatdan o'tish</a>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block mt-3 btn-back-to-home">
+            <i class="fa-solid fa-arrow-left"></i> Orqaga qaytish
+          </button>
+        </form>
+      </div>
+
+      <!-- Register View Container -->
+      <div id="register-view-container" class="hidden">
+        <form id="register-form">
+          <div class="input-group">
+            <label for="reg-fullname"><i class="fa-solid fa-address-card"></i> Ism-Familiya *</label>
+            <input type="text" id="reg-fullname" placeholder="To'liq ismingizni kiriting" required>
+          </div>
+          <div class="input-group">
+            <label for="reg-username"><i class="fa-solid fa-user"></i> Login (Foydalanuvchi nomi) *</label>
+            <input type="text" id="reg-username" placeholder="Login yarating" required>
+          </div>
+          <div class="input-group">
+            <label for="reg-password"><i class="fa-solid fa-lock"></i> Parol *</label>
+            <input type="password" id="reg-password" placeholder="Parol yarating" required>
+          </div>
+          <div id="register-error" class="error-msg"></div>
+          <button type="submit" class="btn btn-accent btn-block" style="color: #0b0f19;">
+            Ro'yxatdan o'tish <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary);">
+            Hisobingiz bormi? <a href="#" id="link-go-to-login" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Tizimga kirish</a>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block mt-3 btn-back-to-home">
+            <i class="fa-solid fa-arrow-left"></i> Orqaga qaytish
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  

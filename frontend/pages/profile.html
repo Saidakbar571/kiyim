@@ -1,0 +1,29 @@
+<section id="tab-profile" class="tab-pane hidden">
+        <div class="data-card" style="max-width: 600px; margin: 0 auto; padding: 30px;">
+          <h3 style="font-weight: 600; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+            <i class="fa-solid fa-address-card" style="color:var(--color-accent); margin-right: 8px;"></i> Profil Ma'lumotlarini Tahrirlash
+          </h3>
+          <form id="profile-settings-form">
+            <div class="input-group">
+              <label for="prof-fullname">To'liq ism-familiya *</label>
+              <input type="text" id="prof-fullname" required placeholder="To'liq ismingiz">
+            </div>
+            <div class="input-group">
+              <label for="prof-username">Foydalanuvchi nomi (Login) *</label>
+              <input type="text" id="prof-username" required placeholder="Login">
+            </div>
+            <div class="input-group">
+              <label for="prof-password">Yangi parol (O'zgartirmaslik uchun bo'sh qoldiring)</label>
+              <input type="password" id="prof-password" placeholder="Kamida 4 ta belgi">
+            </div>
+            <div id="profile-success-msg" class="text-success" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; display: none;">
+              Profil muvaffaqiyatli saqlandi!
+            </div>
+            <div id="profile-error-msg" class="error-msg" style="margin-bottom: 15px;"></div>
+            <button type="submit" class="btn btn-accent btn-block" style="color: #0b0f19; font-weight:600;">
+              O'zgarishlarni Saqlash <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    

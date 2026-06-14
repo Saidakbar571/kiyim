@@ -1,0 +1,86 @@
+<section id="tab-dashboard" class="tab-pane hidden">
+        <!-- KPI Row -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon icon-sales">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Umumiy Savdo</span>
+              <h3 class="kpi-value" id="stat-sales">0 UZS</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-orders">
+              <i class="fa-solid fa-dolly"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Buyurtmalar</span>
+              <h3 class="kpi-value" id="stat-orders">0 ta</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-customers">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Faol Xaridorlar</span>
+              <h3 class="kpi-value" id="stat-customers">0 ta</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-stock">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Kam Qolgan Tovar</span>
+              <h3 class="kpi-value" id="stat-stock-alert">0 ta</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts & Widgets -->
+        <div class="dashboard-charts">
+          <div class="chart-card card-large">
+            <h3>Savdo Diagrammasi</h3>
+            <div class="chart-wrapper">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Kategoriyalar ulushi</h3>
+            <div class="chart-wrapper">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity table -->
+        <div class="data-card mt-4">
+          <div class="card-header">
+            <h3>So'nggi buyurtmalar</h3>
+            <button class="btn btn-sm btn-outline btn-navigate-orders">Barcha buyurtmalar <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mijoz</th>
+                  <th>Sana</th>
+                  <th>Summa</th>
+                  <th>Holat</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-list">
+                <!-- Dynamic Content -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      
