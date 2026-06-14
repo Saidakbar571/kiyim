@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopCo — B2B Wholesale Clothing Portal</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BACKGROUND GLOW EFFECTS -->
+  <div class="glow-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- VIEW 1: CREATIVE LANDING PAGE -->
+  <div id="landing-page" class="landing-layout">
+    <!-- Navigation Header -->
+    <header class="landing-header">
+      <div class="header-container">
+        <div class="logo">
+          <i class="fa-solid fa-globe"></i>
+          <span>Shop<span>Co</span></span>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-outline btn-signin">Portalga Kirish</button>
+          <button class="btn btn-accent btn-register">A'zo Bo'lish</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Split-Screen Modern Hero Section -->
+    <section class="split-hero">
+      <div class="split-hero-container">
+        <!-- Left Editorial Text -->
+        <div class="hero-editorial">
+          <span class="editorial-badge">PREMIUM B2B CLOTHING</span>
+          <h1 class="editorial-title">
+            Ulgurji Kiyim-Kechakning<br>
+            <span class="highlight">Yangi Davri</span>
+          </h1>
+          <p class="editorial-desc">
+            Dunyo bo'ylab eng sara dizayndagi kiyimlarni to'g'ridan-to'g'ri ishlab chiqaruvchidan ulgurji narxlarda xarid qiling. Biznesingiz uchun eng qulay shartnomalar va real vaqtda monitoring.
+          </p>
+          <div class="hero-btns">
+            <button class="btn btn-accent btn-large btn-signin">Portalga Kirish <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="btn btn-outline btn-large btn-register">Katalog bilan tanishish</button>
+          </div>
+          <div class="editorial-stats">
+            <div>
+              <h3>500+</h3>
+              <span>Premium Modellar</span>
+            </div>
+            <div>
+              <h3>1200+</h3>
+              <span>Faol Xaridorlar</span>
+            </div>
+            <div>
+              <h3>99%</h3>
+              <span>O'z vaqtida yetkazish</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Category Cards Slider/Showcase -->
+        <div class="hero-showcase">
+          <div class="showcase-card">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&auto=format&fit=crop&q=80" alt="Kostyumlar">
+            <div class="card-overlay">
+              <span class="cat-tag">Kostyumlar</span>
+              <h4>Klassik Erkaklar Kostyumlari</h4>
+            </div>
+          </div>
+          <div class="showcase-card mt-showcase">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=80" alt="Ko'ylaklar">
+            <div class="card-overlay">
+              <span class="cat-tag">Ayollar</span>
+              <h4>Yozgi Nafis Ko'ylaklar</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Showcase Catalog samples -->
+    <section class="catalog-samples">
+      <div class="container-narrow">
+        <div class="section-title-center">
+          <span class="section-tag">POPULAR MODELLAR</span>
+          <h2>Katalogimizdan Namunalar</h2>
+          <p>Mavsumning eng xaridorgir kiyimlari va ulgurji boshlang'ich narxlari.</p>
+        </div>
+        <div class="samples-grid">
+          <div class="sample-item">
+            <div class="sample-img-container">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=80" alt="Futbolkalar">
+              <span class="sample-price">150,000 UZS dan</span>
+            </div>
+            <h4>Trikotaj Erkaklar T-Shirt</h4>
+            <span class="p-cat">Futbolkalar</span>
+          </div>
+          <div class="sample-item">
+            <div class="sample-img-container">
+              <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&auto=format&fit=crop&q=80" alt="Shimlar">
+              <span class="sample-price">350,000 UZS dan</span>
+            </div>
+            <h4>Slim Fit Djinsi Shim</h4>
+            <span class="p-cat">Shimlar</span>
+          </div>
+          <div class="sample-item">
+            <div class="sample-img-container">
+              <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&auto=format&fit=crop&q=80" alt="Poyabzallar">
+              <span class="sample-price">950,000 UZS dan</span>
+            </div>
+            <h4>Krossovka Nike Air Force</h4>
+            <span class="p-cat">Poyabzallar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Benefits Section -->
+    <section class="benefits-section">
+      <div class="container-narrow">
+        <div class="benefits-layout">
+          <div class="benefit-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>B2B Xavfsiz Tranzaksiyalar</h4>
+            <p>Barcha bank to'lovlari va hujjatlar avtomatik yuritiladi va qonuniy himoyalangan.</p>
+          </div>
+          <div class="benefit-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Tezkor Logistika</h4>
+            <p>Shartnoma tuzilgach, tovarlar shu kunning o'zidayoq ombordan yuklanadi.</p>
+          </div>
+          <div class="benefit-box">
+            <i class="fa-solid fa-tag"></i>
+            <h4>Moslashuvchan Chegirmalar</h4>
+            <p>Muntazam xaridorlar va yirik buyurtmalar uchun maxsus chegirma kuponlari tizimi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coupons Advertising Bar -->
+    <section class="coupons-promo">
+      <div class="promo-container">
+        <div class="promo-info">
+          <h2>Mavjud Kupon Kodlarimiz</h2>
+          <p>Portalda buyurtma yaratishda ushbu kupon kodlarini qo'llang va chegirmalarga ega bo'ling.</p>
+        </div>
+        <div class="promo-tickets">
+          <div class="ticket">
+            <div class="ticket-val">10% OFF</div>
+            <div class="ticket-code">SHOPCO10</div>
+          </div>
+          <div class="ticket">
+            <div class="ticket-val">15% OFF</div>
+            <div class="ticket-code">SPRING15</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2>Ulgurji buyurtmalarni boshlashga tayyormisiz?</h2>
+        <p>Batafsil ma'lumot va savdo jurnallariga kirish uchun portalga o'ting.</p>
+        <button class="btn btn-accent btn-large btn-signin">Portalga O'tish <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="footer-container">
+        <span class="logo-text">ShopCo <span class="gold-text">Corp</span></span>
+        <p>© 2026 ShopCo. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- VIEW 2: AUTH SCREEN -->
+  <div id="auth-screen" class="auth-container hidden">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="logo">
+          <i class="fa-solid fa-globe"></i>
+          <span>Shop<span>Co</span></span>
+        </div>
+        <h3>B2B Portal Access</h3>
+        <p>Manage wholesale catalog, bulk orders, and tracking</p>
+      </div>
+
+      <!-- Login View Container -->
+      <div id="login-view-container">
+        <form id="login-form">
+          <div class="input-group">
+            <label for="username"><i class="fa-solid fa-user"></i> Login</label>
+            <input type="text" id="username" placeholder="Loginni kiriting" required value="admin">
+          </div>
+          <div class="input-group">
+            <label for="password"><i class="fa-solid fa-lock"></i> Parol</label>
+            <input type="password" id="password" placeholder="Parolni kiriting" required value="admin123">
+          </div>
+          <div id="login-error" class="error-msg"></div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Access Portal <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          
+          <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary);">
+            Hisobingiz yo'qmi? <a href="#" id="link-go-to-register" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Ro'yxatdan o'tish</a>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block mt-3 btn-back-to-home">
+            <i class="fa-solid fa-arrow-left"></i> Orqaga qaytish
+          </button>
+        </form>
+      </div>
+
+      <!-- Register View Container -->
+      <div id="register-view-container" class="hidden">
+        <form id="register-form">
+          <div class="input-group">
+            <label for="reg-fullname"><i class="fa-solid fa-address-card"></i> Ism-Familiya *</label>
+            <input type="text" id="reg-fullname" placeholder="To'liq ismingizni kiriting" required>
+          </div>
+          <div class="input-group">
+            <label for="reg-username"><i class="fa-solid fa-user"></i> Login (Foydalanuvchi nomi) *</label>
+            <input type="text" id="reg-username" placeholder="Login yarating" required>
+          </div>
+          <div class="input-group">
+            <label for="reg-password"><i class="fa-solid fa-lock"></i> Parol *</label>
+            <input type="password" id="reg-password" placeholder="Parol yarating" required>
+          </div>
+          <div id="register-error" class="error-msg"></div>
+          <button type="submit" class="btn btn-accent btn-block" style="color: #0b0f19;">
+            Ro'yxatdan o'tish <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary);">
+            Hisobingiz bormi? <a href="#" id="link-go-to-login" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Tizimga kirish</a>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block mt-3 btn-back-to-home">
+            <i class="fa-solid fa-arrow-left"></i> Orqaga qaytish
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VIEW 3: MAIN APP CONTAINER -->
+  <div id="app-container" class="app-layout hidden">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <i class="fa-solid fa-globe"></i>
+        <span>Shop<span>Co</span></span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <!-- Client / Buyer Specific items (Only visible for managers/buyers) -->
+        <a href="#" class="menu-item active" data-tab="catalog" id="menu-item-catalog">
+          <i class="fa-solid fa-tags"></i>
+          <span>Katalog</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="myorders" id="menu-item-myorders">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span>Buyurtmalarim</span>
+        </a>
+
+        <!-- Admin Specific Items (Only visible for admin role) -->
+        <a href="#" class="menu-item" data-tab="dashboard" id="menu-item-dashboard">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="products" id="menu-item-products">
+          <i class="fa-solid fa-shirt"></i>
+          <span>Mahsulotlar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="orders" id="menu-item-orders">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Buyurtmalar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="customers" id="menu-item-customers">
+          <i class="fa-solid fa-users"></i>
+          <span>Mijozlar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="reports" id="menu-item-reports">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Hisobotlar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="coupons" id="menu-item-coupons">
+          <i class="fa-solid fa-ticket"></i>
+          <span>Kuponlar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="staff" id="menu-item-staff">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Xodimlar</span>
+        </a>
+        <a href="#" class="menu-item" data-tab="profile" id="menu-item-profile">
+          <i class="fa-solid fa-address-card"></i>
+          <span>Profil</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name" id="user-display-name">Administrator</span>
+          <span class="user-role" id="user-display-role">Admin</span>
+        </div>
+        <button id="btn-logout" title="Chiqish">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      <!-- Top header bar -->
+      <header class="top-bar">
+        <div class="welcome-text">
+          <h2 id="tab-title">Boshqaruv Paneli</h2>
+          <p id="tab-subtitle">Do'koningizdagi umumiy holat va ko'rsatkichlar</p>
+        </div>
+        <div class="top-bar-actions">
+          <div class="store-badge">
+            <span class="indicator online"></span>
+            System Live
+          </div>
+        </div>
+      </header>
+
+      <!-- TAB: USER CATALOGUE (FashionWholesale layout) -->
+      <section id="tab-catalog" class="tab-pane active hidden">
+        <div class="catalog-layout-grid">
+          <!-- Left Catalog items grid -->
+          <div class="catalog-items-container">
+            <div class="action-bar">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="catalog-search" placeholder="Katalogdan qidirish...">
+              </div>
+              <div class="filter-group">
+                <select id="catalog-filter-cat">
+                  <option value="">Barcha bo'limlar</option>
+                  <option value="Kostyumlar">Kostyumlar</option>
+                  <option value="Futbolkalar">Futbolkalar</option>
+                  <option value="Shimlar">Shimlar</option>
+                  <option value="Ko'ylaklar">Ko'ylaklar</option>
+                  <option value="Poyabzallar">Poyabzallar</option>
+                  <option value="Kurtkalar">Kurtkalar</option>
+                </select>
+                <select id="catalog-sort">
+                  <option value="default">Saralash: Standart</option>
+                  <option value="price-asc">Narx: Arzonroqlaridan</option>
+                  <option value="price-desc">Narx: Qimmatroqlaridan</option>
+                  <option value="name-asc">Nomi bo'yicha: A-Z</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="product-grid" id="catalog-products-grid">
+              <!-- Dynamically rendered catalog products -->
+            </div>
+          </div>
+
+          <!-- Right Shopping Cart Sidebar -->
+          <aside class="catalog-cart-sidebar">
+            <h3>Xarid Savati</h3>
+            <div class="cart-items-list" id="cart-items-container">
+              <!-- Cart items -->
+            </div>
+
+            <div class="cart-coupon-section mt-3">
+              <label for="cart-coupon-input">Promokod</label>
+              <div style="display:flex; gap:8px; margin-top:5px;">
+                <input type="text" id="cart-coupon-input" placeholder="Masalan: SHOPCO10" style="flex-grow:1; padding:8px;">
+                <button class="btn btn-secondary btn-sm" id="btn-cart-apply-coupon">Apply</button>
+              </div>
+              <span id="cart-coupon-msg" style="font-size:0.75rem; font-weight:600; display:block; margin-top:4px;"></span>
+            </div>
+
+            <div class="cart-summary-box mt-3">
+              <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">0 UZS</span>
+              </div>
+              <div class="summary-row text-success" id="cart-discount-row" style="display:none;">
+                <span>Discount:</span>
+                <span id="cart-discount-val">0 UZS</span>
+              </div>
+              <div class="summary-row total-row mt-2">
+                <span>Jami Summa:</span>
+                <span id="cart-grand-total">0 UZS</span>
+              </div>
+            </div>
+
+            <button class="btn btn-accent btn-block mt-3" id="btn-checkout-cart" style="color:#0b0f19; font-weight:600;">
+              Buyurtma berish <i class="fa-solid fa-cash-register"></i>
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <!-- TAB: MY ORDERS -->
+      <section id="tab-myorders" class="tab-pane hidden">
+        <div class="data-card">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Buyurtma ID</th>
+                  <th>Sana</th>
+                  <th>Summa</th>
+                  <th>Holati</th>
+                  <th>Mahsulotlar</th>
+                  <th>Harakat</th>
+                </tr>
+              </thead>
+              <tbody id="myorders-list-table">
+                <!-- User's own orders -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: DASHBOARD (ADMIN) -->
+      <section id="tab-dashboard" class="tab-pane hidden">
+        <!-- KPI Row -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon icon-sales">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Umumiy Savdo</span>
+              <h3 class="kpi-value" id="stat-sales">0 UZS</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-orders">
+              <i class="fa-solid fa-dolly"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Buyurtmalar</span>
+              <h3 class="kpi-value" id="stat-orders">0 ta</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-customers">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Faol Xaridorlar</span>
+              <h3 class="kpi-value" id="stat-customers">0 ta</h3>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon icon-stock">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="kpi-data">
+              <span class="kpi-title">Kam Qolgan Tovar</span>
+              <h3 class="kpi-value" id="stat-stock-alert">0 ta</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts & Widgets -->
+        <div class="dashboard-charts">
+          <div class="chart-card card-large">
+            <h3>Savdo Diagrammasi</h3>
+            <div class="chart-wrapper">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Kategoriyalar ulushi</h3>
+            <div class="chart-wrapper">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity table -->
+        <div class="data-card mt-4">
+          <div class="card-header">
+            <h3>So'nggi buyurtmalar</h3>
+            <button class="btn btn-sm btn-outline btn-navigate-orders">Barcha buyurtmalar <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mijoz</th>
+                  <th>Sana</th>
+                  <th>Summa</th>
+                  <th>Holat</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-list">
+                <!-- Dynamic Content -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: PRODUCTS (ADMIN) -->
+      <section id="tab-products" class="tab-pane hidden">
+        <div class="action-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-product" placeholder="Mahsulotlarni qidirish...">
+          </div>
+          <div class="filter-group">
+            <select id="filter-product-cat">
+              <option value="">Barcha kategoriyalar</option>
+              <option value="Kostyumlar">Kostyumlar</option>
+              <option value="Futbolkalar">Futbolkalar</option>
+              <option value="Shimlar">Shimlar</option>
+              <option value="Ko'ylaklar">Ko'ylaklar</option>
+              <option value="Poyabzallar">Poyabzallar</option>
+              <option value="Kurtkalar">Kurtkalar</option>
+            </select>
+            <button class="btn btn-primary" id="btn-open-product-modal">
+              <i class="fa-solid fa-plus"></i> Yangi mahsulot
+            </button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="product-list-container">
+          <!-- Dynamic product cards -->
+        </div>
+      </section>
+
+      <!-- TAB: ORDERS (ADMIN) -->
+      <section id="tab-orders" class="tab-pane hidden">
+        <div class="action-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-order" placeholder="Buyurtmalarni qidirish...">
+          </div>
+          <button class="btn btn-primary" id="btn-open-order-modal">
+            <i class="fa-solid fa-plus"></i> Yangi buyurtma yaratish
+          </button>
+        </div>
+
+        <div class="data-card">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Buyurtma ID</th>
+                  <th>Mijoz</th>
+                  <th>Sanasi</th>
+                  <th>Summasi</th>
+                  <th>Holati</th>
+                  <th>Mahsulotlar</th>
+                  <th>Harakatlar</th>
+                </tr>
+              </thead>
+              <tbody id="orders-list-table">
+                <!-- Dynamic orders -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: CUSTOMERS (ADMIN) -->
+      <section id="tab-customers" class="tab-pane hidden">
+        <div class="action-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-customer" placeholder="Mijozlarni qidirish...">
+          </div>
+          <button class="btn btn-primary" id="btn-open-customer-modal">
+            <i class="fa-solid fa-user-plus"></i> Yangi mijoz
+          </button>
+        </div>
+
+        <div class="data-card">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mijoz ID</th>
+                  <th>Ism-familiya</th>
+                  <th>Telefon</th>
+                  <th>Elektron pochta</th>
+                  <th>Sotib olgan summasi</th>
+                  <th>Buyurtmalar soni</th>
+                </tr>
+              </thead>
+              <tbody id="customers-list-table">
+                <!-- Dynamic customer list -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: REPORTS (ADMIN) -->
+      <section id="tab-reports" class="tab-pane hidden">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon icon-sales"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-title">O'rtacha Chek Summasi</span>
+              <h3 class="kpi-value" id="report-avg-cart">0 UZS</h3>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon icon-customers"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-title">Maksimal Savdo</span>
+              <h3 class="kpi-value" id="report-max-sale">0 UZS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-charts mt-4">
+          <div class="chart-card card-large" style="grid-column: 1 / -1;">
+            <h3>Yillik Savdo Hisoboti</h3>
+            <div class="chart-wrapper" style="height: 350px;">
+              <canvas id="yearlySalesChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: COUPONS (ADMIN) -->
+      <section id="tab-coupons" class="tab-pane hidden">
+        <div class="action-bar">
+          <h3 style="font-weight:600;">Chegirma va Promokodlar</h3>
+          <button class="btn btn-primary" id="btn-open-coupon-modal">
+            <i class="fa-solid fa-plus"></i> Yangi Kupon
+          </button>
+        </div>
+        <div class="data-card">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Kupon kodi</th>
+                  <th>Chegirma foizi</th>
+                  <th>Holati</th>
+                </tr>
+              </thead>
+              <tbody id="coupons-list-table">
+                <!-- Dynamic coupons data -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: STAFF (ADMIN) -->
+      <section id="tab-staff" class="tab-pane hidden">
+        <div class="action-bar">
+          <h3 style="font-weight:600;">Do'kon Xodimlari</h3>
+          <button class="btn btn-primary" id="btn-open-staff-modal">
+            <i class="fa-solid fa-user-plus"></i> Yangi xodim qo'shish
+          </button>
+        </div>
+        <div class="data-card">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Ism-familiya</th>
+                  <th>Foydalanuvchi nomi (Login)</th>
+                  <th>Lavozimi</th>
+                  <th>Harakatlar</th>
+                </tr>
+              </thead>
+              <tbody id="staff-list-table">
+                <!-- Dynamic staff data -->
+              </tbody>
+            </table>
+          </div>
+      </section>
+
+      <!-- TAB: PROFILE SETTINGS (USER & ADMIN) -->
+      <section id="tab-profile" class="tab-pane hidden">
+        <div class="data-card" style="max-width: 600px; margin: 0 auto; padding: 30px;">
+          <h3 style="font-weight: 600; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+            <i class="fa-solid fa-address-card" style="color:var(--color-accent); margin-right: 8px;"></i> Profil Ma'lumotlarini Tahrirlash
+          </h3>
+          <form id="profile-settings-form">
+            <div class="input-group">
+              <label for="prof-fullname">To'liq ism-familiya *</label>
+              <input type="text" id="prof-fullname" required placeholder="To'liq ismingiz">
+            </div>
+            <div class="input-group">
+              <label for="prof-username">Foydalanuvchi nomi (Login) *</label>
+              <input type="text" id="prof-username" required placeholder="Login">
+            </div>
+            <div class="input-group">
+              <label for="prof-password">Yangi parol (O'zgartirmaslik uchun bo'sh qoldiring)</label>
+              <input type="password" id="prof-password" placeholder="Kamida 4 ta belgi">
+            </div>
+            <div id="profile-success-msg" class="text-success" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; display: none;">
+              Profil muvaffaqiyatli saqlandi!
+            </div>
+            <div id="profile-error-msg" class="error-msg" style="margin-bottom: 15px;"></div>
+            <button type="submit" class="btn btn-accent btn-block" style="color: #0b0f19; font-weight:600;">
+              O'zgarishlarni Saqlash <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: ADD/EDIT PRODUCT -->
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="product-modal-title">Yangi mahsulot qo'shish</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="product-form">
+        <input type="hidden" id="product-id">
+        <div class="form-row">
+          <div class="input-group">
+            <label for="p-name">Mahsulot nomi *</label>
+            <input type="text" id="p-name" required placeholder="Masalan: Erkaklar kostyumi">
+          </div>
+          <div class="input-group">
+            <label for="p-category">Kategoriya *</label>
+            <select id="p-category" required>
+              <option value="Kostyumlar">Kostyumlar</option>
+              <option value="Futbolkalar">Futbolkalar</option>
+              <option value="Shimlar">Shimlar</option>
+              <option value="Ko'ylaklar">Ko'ylaklar</option>
+              <option value="Poyabzallar">Poyabzallar</option>
+              <option value="Kurtkalar">Kurtkalar</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <label for="p-price">Narxi (UZS) *</label>
+            <input type="number" id="p-price" required min="0" placeholder="Narxini kiriting">
+          </div>
+          <div class="input-group">
+            <label for="p-stock">Ombordagi soni</label>
+            <input type="number" id="p-stock" min="0" value="0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <label for="p-sizes">Mavjud o'lchamlar</label>
+            <input type="text" id="p-sizes" placeholder="Masalan: S,M,L,XL">
+          </div>
+          <div class="input-group">
+            <label for="p-colors">Mavjud ranglar</label>
+            <input type="text" id="p-colors" placeholder="Masalan: Qora,Oq,Ko'k">
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="p-image">Rasm URL manzili</label>
+          <input type="url" id="p-image" placeholder="Rasm linkini kiriting (ixtiyoriy)">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary" id="btn-save-product">Saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: NEW ORDER -->
+  <div id="order-modal" class="modal hidden">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h3>Yangi buyurtma rasmiylashtirish</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="order-form">
+        <div class="input-group">
+          <label for="order-customer">Mijozni tanlang *</label>
+          <select id="order-customer" required>
+            <!-- Dynamic list of customers -->
+          </select>
+        </div>
+
+        <div class="order-items-builder">
+          <h4>Mahsulotlar ro'yxati</h4>
+          <div class="builder-row">
+            <select id="order-select-product">
+              <!-- Dynamic dropdown list of products in stock -->
+            </select>
+            <input type="number" id="order-product-qty" min="1" value="1" style="width: 80px;">
+            <button type="button" class="btn btn-secondary" id="btn-add-item-to-list">
+              <i class="fa-solid fa-plus"></i> Qo'shish
+            </button>
+          </div>
+
+          <div class="table-responsive mt-3">
+            <table class="table-compact">
+              <thead>
+                <tr>
+                  <th>Mahsulot</th>
+                  <th>Narxi</th>
+                  <th>Soni</th>
+                  <th>Jami</th>
+                  <th>O'chirish</th>
+                </tr>
+              </thead>
+              <tbody id="order-items-tbody">
+                <!-- Dynamically built rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="form-row mt-3">
+          <div class="input-group">
+            <label for="order-coupon-input">Promokod / Kupon kodi</label>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="order-coupon-input" placeholder="Masalan: SHOPCO10" style="flex-grow:1;">
+              <button type="button" class="btn btn-secondary" id="btn-apply-coupon">Tekshirish</button>
+            </div>
+            <span id="coupon-status-msg" style="font-size:0.8rem; font-weight:600;"></span>
+          </div>
+        </div>
+
+        <div class="order-summary-box">
+          <div>
+            <span>Umumiy jami summa:</span>
+            <span id="order-grand-total">0 UZS</span>
+          </div>
+          <div id="order-discount-container" style="font-size: 0.95rem; margin-top:5px; color:var(--color-success); display:none;">
+            <span>Chegirma: </span>
+            <span id="order-discount-value">0 UZS</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Buyurtmani yaratish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD CUSTOMER -->
+  <div id="customer-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Yangi mijoz yaratish</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="customer-form">
+        <div class="input-group">
+          <label for="c-fullname">Ism-familiya *</label>
+          <input type="text" id="c-fullname" required placeholder="Masalan: Sardor Rustamov">
+        </div>
+        <div class="input-group">
+          <label for="c-phone">Telefon raqami *</label>
+          <input type="text" id="c-phone" required placeholder="Masalan: +998901234567">
+        </div>
+        <div class="input-group">
+          <label for="c-email">Elektron pochta (E-mail)</label>
+          <input type="email" id="c-email" placeholder="Masalan: example@gmail.com">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Qo'shish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD COUPON -->
+  <div id="coupon-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Yangi Kupon Kodini Yaratish</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="coupon-form">
+        <div class="input-group">
+          <label for="cp-code">Kupon Kodi (Promokod) *</label>
+          <input type="text" id="cp-code" required placeholder="Masalan: SALE20" style="text-transform:uppercase;">
+        </div>
+        <div class="input-group">
+          <label for="cp-percent">Chegirma Foizi (%) *</label>
+          <input type="number" id="cp-percent" required min="1" max="100" placeholder="15">
+        </div>
+        <div id="coupon-error" class="error-msg"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Yaratish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD STAFF -->
+  <div id="staff-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Yangi Xodim Qo'shish</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="staff-form">
+        <div class="input-group">
+          <label for="st-fullname">To'liq ism-familiyasi *</label>
+          <input type="text" id="st-fullname" required placeholder="Masalan: Kamola Aliyeva">
+        </div>
+        <div class="input-group">
+          <label for="st-username">Foydalanuvchi nomi (Login) *</label>
+          <input type="text" id="st-username" required placeholder="kamola">
+        </div>
+        <div class="input-group">
+          <label for="st-password">Parol *</label>
+          <input type="password" id="st-password" required placeholder="Parolni kiriting">
+        </div>
+        <div class="input-group">
+          <label for="st-role">Lavozimi / Roli *</label>
+          <select id="st-role" required>
+            <option value="user">Foydalanuvchi (Xaridor)</option>
+            <option value="admin">Administrator</option>
+          </select>
+        </div>
+        <div id="staff-error" class="error-msg"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Xodimni saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script logic -->
+  <script src="app.js"></script>
+</body>
+</html>
