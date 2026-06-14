@@ -95,8 +95,11 @@ function getBadgeClass(status) {
 }
 
 // Document Load & Check Auth
-document.addEventListener('DOMContentLoaded', () => {
-  checkAuth();
+document.addEventListener('DOMContentLoaded', async () => {
+  // Pre-load and cache the landing and auth templates
+  await getTemplate('landing');
+  await getTemplate('auth');
+  await checkAuth();
   setupEventListeners();
 });
 
