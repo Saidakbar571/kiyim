@@ -26,6 +26,7 @@ jobs:
           REMOTE_USER: ${{ secrets.EC2_USER }}
           SOURCE: "./"
           TARGET: "/var/www/app/shopco/"
+          EXCLUDE: "/node_modules/, /frontend/node_modules/, /frontend/dist/"
 
       - name: Build & Restart on EC2
         uses: appleboy/ssh-action@master
@@ -34,7 +35,9 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www/app/shopco/frontend
+            cd /var/www/app/shopco
+            npm install
+            cd frontend
             npm install
             npm run build
             cd ..
