@@ -332,7 +332,7 @@ export default function App() {
   const titles = {
     catalog: { title: 'Ulgurji Savdo Katalogi', subtitle: 'Mahsulotlarni tanlang va savat orqali buyurtma qiling' },
     myorders: { title: 'Mening Buyurtmalarim', subtitle: 'Hozirgacha joylashtirgan buyurtmalaringiz va ularning holati' },
-    dashboard: { title: 'Boshqaruv Paneli', subtitle: 'Do\'koningizdagi umumiy holat va ko\'rsatkichlar' },
+    dashboard: { title: 'Remodule', subtitle: 'Do\'koningizdagi umumiy holat va ko\'rsatkichlar' },
     products: { title: 'Mahsulotlar Ombori', subtitle: 'Kiyimlar ro\'yxati va inventarni boshqarish' },
     orders: { title: 'Buyurtmalar Jurnali', subtitle: 'Mijozlar buyurtmalarini boshqarish va nazorat qilish' },
     customers: { title: 'Mijozlar Bazasi', subtitle: 'Sodiq mijozlar va aloqa ma\'lumotlari' },
