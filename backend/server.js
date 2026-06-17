@@ -94,7 +94,7 @@ function initDatabase() {
       if (!row) {
         const hashedPassword = bcrypt.hashSync('admin123', 10);
         db.run("INSERT INTO users (username, password, full_name, role) VALUES (?, ?, ?, ?)",
-          ['admin', hashedPassword, 'ShopCo Administrator', 'admin']);
+          ['admin', hashedPassword, 'ModaFlow Administrator', 'admin']);
         console.log('Default admin seeded (admin / admin123)');
       }
     });
@@ -102,7 +102,7 @@ function initDatabase() {
     // Seed default coupons if empty
     db.get("SELECT COUNT(*) as count FROM coupons", [], (err, row) => {
       if (row && row.count === 0) {
-        db.run("INSERT INTO coupons (code, discount_percent, active) VALUES (?, ?, ?)", ['SHOPCO10', 10, 1]);
+        db.run("INSERT INTO coupons (code, discount_percent, active) VALUES (?, ?, ?)", ['MODAFLOW10', 10, 1]);
         db.run("INSERT INTO coupons (code, discount_percent, active) VALUES (?, ?, ?)", ['SPRING15', 15, 1]);
         console.log('Default coupons seeded.');
       }
@@ -183,7 +183,7 @@ app.post('/api/auth/register', (req, res) => {
 
       // Automatically create matching customer profile
       db.run("INSERT INTO customers (full_name, email, phone) VALUES (?, ?, ?)",
-        [full_name, username + '@shopco.com', '+998990001122'],
+        [full_name, username + '@modaflow.com', '+998990001122'],
         function(err2) {
           // Send response regardless of customer table insert errors
           const token = jwt.sign({ id: userId, username, full_name, role: 'user' }, JWT_SECRET, { expiresIn: '12h' });
@@ -276,7 +276,7 @@ app.put('/api/auth/profile', authenticateToken, (req, res) => {
     function finalizeProfileUpdate() {
       // Also update matching customer name if role is user/manager so orders align
       db.run("UPDATE customers SET full_name = ?, email = ? WHERE email = ?",
-        [full_name, username + '@shopco.com', req.user.username + '@shopco.com']);
+        [full_name, username + '@modaflow.com', req.user.username + '@modaflow.com']);
 
       // Get updated user data to sign a new token
       db.get("SELECT id, username, full_name, role FROM users WHERE id = ?", [userId], (err3, updatedUser) => {

@@ -316,7 +316,7 @@ export default function Catalog({ user, onCheckoutSuccess }) {
                       className="btn btn-accent btn-block btn-sm mt-2"
                       onClick={() => handleAddToCart(p)}
                       disabled={p.stock === 0}
-                      style={{ color: '#0b0f19', fontWeight: 600 }}
+                      style={{ fontWeight: 600 }}
                     >
                       {p.stock === 0 ? 'Tugagan' : 'Savatga Qo\'shish'} <i className="fa-solid fa-basket-shopping"></i>
                     </button>
@@ -408,7 +408,7 @@ export default function Catalog({ user, onCheckoutSuccess }) {
             </div>
           </div>
 
-          <button className="btn btn-accent btn-block mt-3" onClick={handleCheckout} style={{ color: '#0b0f19', fontWeight: 600 }}>
+          <button className="btn btn-accent btn-block mt-3" onClick={handleCheckout} style={{ fontWeight: 600 }}>
             Buyurtma berish <i className="fa-solid fa-cash-register"></i>
           </button>
         </aside>

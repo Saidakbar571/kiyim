@@ -360,6 +360,7 @@ export default function App() {
         <nav className="sidebar-menu">
           {user.role === 'user' ? (
             <>
+              <div className="sidebar-category-header">Mijoz</div>
               <a href="#" className={`menu-item ${activeTab === 'catalog' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('catalog'); }}>
                 <i className="fa-solid fa-tags"></i>
                 <span>Katalog</span>
@@ -371,10 +372,17 @@ export default function App() {
             </>
           ) : (
             <>
+              <div className="sidebar-category-header">Tahlillar</div>
               <a href="#" className={`menu-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('dashboard'); }}>
                 <i className="fa-solid fa-chart-pie"></i>
                 <span>Dashboard</span>
               </a>
+              <a href="#" className={`menu-item ${activeTab === 'reports' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('reports'); }}>
+                <i className="fa-solid fa-chart-line"></i>
+                <span>Hisobotlar</span>
+              </a>
+
+              <div className="sidebar-category-header">Operatsiyalar</div>
               <a href="#" className={`menu-item ${activeTab === 'products' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('products'); }}>
                 <i className="fa-solid fa-shirt"></i>
                 <span>Mahsulotlar</span>
@@ -387,10 +395,8 @@ export default function App() {
                 <i className="fa-solid fa-users"></i>
                 <span>Mijozlar</span>
               </a>
-              <a href="#" className={`menu-item ${activeTab === 'reports' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('reports'); }}>
-                <i className="fa-solid fa-chart-line"></i>
-                <span>Hisobotlar</span>
-              </a>
+
+              <div className="sidebar-category-header">Sozlamalar</div>
               <a href="#" className={`menu-item ${activeTab === 'coupons' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('coupons'); }}>
                 <i className="fa-solid fa-ticket"></i>
                 <span>Kuponlar</span>
@@ -401,6 +407,7 @@ export default function App() {
               </a>
             </>
           )}
+          <div className="sidebar-category-header">Shaxsiy</div>
           <a href="#" className={`menu-item ${activeTab === 'profile' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); setActiveTab('profile'); }}>
             <i className="fa-solid fa-address-card"></i>
             <span>Profil</span>
@@ -610,7 +617,7 @@ export default function App() {
                 <div className="input-group">
                   <label>Promokod / Kupon kodi</label>
                   <div style={{ display: 'flex', gap: 10 }}>
-                    <input type="text" placeholder="Masalan: SHOPCO10" value={orderCouponInput} onChange={(e) => setOrderCouponInput(e.target.value)} style={{ flexGrow: 1 }} />
+                    <input type="text" placeholder="Masalan: MODAFLOW10" value={orderCouponInput} onChange={(e) => setOrderCouponInput(e.target.value)} style={{ flexGrow: 1 }} />
                     <button type="button" className="btn btn-secondary" onClick={checkOrderCoupon}>Tekshirish</button>
                   </div>
                   {orderCouponMsg.text && <span style={{ fontSize: '0.8rem', fontWeight: 600, color: orderCouponMsg.isError ? 'var(--color-danger)' : 'var(--color-success)' }}>{orderCouponMsg.text}</span>}

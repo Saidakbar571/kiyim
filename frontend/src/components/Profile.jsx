@@ -99,7 +99,7 @@ export default function Profile({ user, onProfileUpdate }) {
             </div>
           )}
           {error && <div className="error-msg" style={{ marginBottom: 15 }}>{error}</div>}
-          <button type="submit" className="btn btn-accent btn-block" style={{ color: '#0b0f19', fontWeight: 600 }}>
+          <button type="submit" className="btn btn-accent btn-block" style={{ fontWeight: 600 }}>
             O'zgarishlarni Saqlash <i className="fa-solid fa-floppy-disk"></i>
           </button>
         </form>

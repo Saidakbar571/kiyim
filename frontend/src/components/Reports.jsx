@@ -59,7 +59,7 @@ export default function Reports() {
     datasets: [{
       label: 'Oylik daromad (UZS)',
       data: [12000000, 15000000, 18000000, 22000000, 31000000, reports.stats.total_sales, 0, 0, 0, 0, 0, 0],
-      backgroundColor: '#c9a84c',
+      backgroundColor: '#047857',
       borderRadius: 4
     }]
   };
@@ -68,11 +68,11 @@ export default function Reports() {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { labels: { color: '#9CA3AF', font: { family: 'Outfit' } } }
+      legend: { labels: { color: '#56655b', font: { family: 'Plus Jakarta Sans' } } }
     },
     scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-      y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } }
+      x: { grid: { color: 'rgba(26,40,30,0.07)' }, ticks: { color: '#56655b' } },
+      y: { grid: { color: 'rgba(26,40,30,0.07)' }, ticks: { color: '#56655b' } }
     }
   };
 

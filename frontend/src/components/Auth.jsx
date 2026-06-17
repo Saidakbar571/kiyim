@@ -56,7 +56,7 @@ export default function Auth({ initialMode = 'login', onAuthSuccess, onBackToHom
         <div className="auth-header">
           <div className="logo">
             <i className="fa-solid fa-globe"></i>
-            <span>Shop<span>Co</span></span>
+            <span>MetaFlow<span></span></span>
           </div>
           <h3>B2B Portal Access</h3>
           <p>Manage wholesale catalog, bulk orders, and tracking</p>
@@ -149,7 +149,7 @@ export default function Auth({ initialMode = 'login', onAuthSuccess, onBackToHom
                 />
               </div>
               {error && <div className="error-msg">{error}</div>}
-              <button type="submit" className="btn btn-accent btn-block" style={{ color: '#0b0f19' }}>
+              <button type="submit" className="btn btn-accent btn-block">
                 Ro'yxatdan o'tish <i className="fa-solid fa-user-plus"></i>
               </button>
 

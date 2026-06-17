@@ -46,11 +46,11 @@ export default function Dashboard({ onNavigate }) {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { labels: { color: '#9CA3AF', font: { family: 'Outfit' } } }
+      legend: { labels: { color: '#56655b', font: { family: 'Plus Jakarta Sans' } } }
     },
     scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-      y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } }
+      x: { grid: { color: 'rgba(26,40,30,0.07)' }, ticks: { color: '#56655b' } },
+      y: { grid: { color: 'rgba(26,40,30,0.07)' }, ticks: { color: '#56655b' } }
     }
   };
 
@@ -59,8 +59,8 @@ export default function Dashboard({ onNavigate }) {
     datasets: [{
       label: 'Savdo hajmi (UZS)',
       data: [1200000, 1900000, 3000000, 5000000, 2300000, 4800000, stats.total_sales > 18000000 ? 8000000 : 3500000],
-      borderColor: '#c9a84c',
-      backgroundColor: 'rgba(201, 168, 76, 0.05)',
+      borderColor: '#047857',
+      backgroundColor: 'rgba(16, 185, 129, 0.14)',
       fill: true,
       tension: 0.4
     }]
@@ -70,7 +70,7 @@ export default function Dashboard({ onNavigate }) {
     labels: stats.categories.map(c => c.category),
     datasets: [{
       data: stats.categories.map(c => c.count),
-      backgroundColor: ['#c9a84c', '#4b5563', '#1e293b', '#374151', '#4b5563', '#1f2937']
+      backgroundColor: ['#047857', '#10b981', '#6ee7b7', '#b45309', '#1d4ed8', '#9ca3af']
     }]
   };
 
@@ -146,7 +146,7 @@ export default function Dashboard({ onNavigate }) {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                  legend: { labels: { color: '#9CA3AF', font: { family: 'Outfit' } } }
+                  legend: { labels: { color: '#56655b', font: { family: 'Plus Jakarta Sans' } } }
                 }
               }}
             />
