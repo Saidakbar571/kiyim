@@ -50,7 +50,7 @@ export default function Landing({ onNavigate }) {
             <span>AVTOMATLASHTIRILGAN TIZIMI</span>
           </h1>
           <p className="hero-immersive-desc">
-            jagsgkdajsdgk B2B platformasi - kiyim-kechak brendlari, ulgurji xaridorlar va fabrikalar o'rtasidagi to'g'ridan-to'g'ri integratsiya. Murakkab buyurtmalarni 3 ta tugma bilan yuboring va real vaqtda kuzating.
+            ModaFlow B2B platformasi - kiyim-kechak brendlari, ulgurji xaridorlar va fabrikalar o'rtasidagi to'g'ridan-to'g'ri integratsiya. Murakkab buyurtmalarni 3 ta tugma bilan yuboring va real vaqtda kuzating.
           </p>
           <div className="hero-action-buttons">
             <button className="btn btn-accent btn-large btn-cyber-glow" onClick={() => onNavigate('login')}>
