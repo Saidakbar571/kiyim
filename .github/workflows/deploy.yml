@@ -21,17 +21,14 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd ~/shopco
-            git checkout main
+            cd ~/kiyim
             git fetch --all
+            git restore backend/database.sqlite
             git reset --hard origin/main
             npm install
-            if [ -d "frontend" ]; then
-              cd frontend
-              npm install
-              npm run build
-              cd ..
-            fi
-            pm2 delete shopco || true
-            pm2 start backend/server.js --name shopco
+            cd frontend
+            npm install
+            npm run build
+            cd ..
+            pm2 restart shopco || pm2 start backend/server.js --name shopco
             pm2 save
